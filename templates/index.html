@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XML Data Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>XML Node Details</h1>
+    <button onclick="fetchData()">Load Data</button>
+    <pre id="dataDisplay">Click the button to load data...</pre>
+
+    <script>
+        function fetchData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('dataDisplay').textContent = JSON.stringify(data, null, 4);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    document.getElementById('dataDisplay').textContent = 'Failed to load data.';
+                });
+        }
+    </script>
+</body>
+</html>
