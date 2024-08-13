@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>XML Data Viewer</title>
+    <script src="{{ url_for('static', filename='main.js') }}" type="module"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,6 +16,7 @@
     </style>
 </head>
 <body>
+    <canvas id="glcanvas" width="640" height="480"></canvas>
     <h1>XML Node Details</h1>
     <button onclick="fetchData()">Load Data</button>
     <pre id="dataDisplay">Click the button to load data...</pre>
