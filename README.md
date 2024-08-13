@@ -1,2 +1,2 @@
 # mapvi
-XML map data viz
+XML map data visualization - Python OpenGL
